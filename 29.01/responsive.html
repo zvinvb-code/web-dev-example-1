@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* mobile screen */
+        @media screen and (min-width: 100px) and (max-width:480px) {
+            body {
+                background-color: burlywood;
+                color: azure;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            ul li {
+                display: inline;
+                margin: 10px;
+                /* text-align: center; cannot use this tag in list*/
+            }
+
+        }
+
+        /* tablet screen */
+        @media screen and (min-width: 481px) and (max-width:768px) {
+            body {
+                background-color: cornflowerblue;
+                color: azure;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            ul li {
+                display: inline;
+                margin: 10px;
+                /* text-align: center; cannot use this tag in list*/
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>responsive website</h1>
+    <p>
+        <strong>Note:</strong>
+        @media tag helps us to achieve responsiveness of the website
+    </p>
+
+    <ul>
+        <li>home</li>
+        <li>login</li>
+        <li>shop</li>
+    </ul>
+
+</body>
+
+</html>

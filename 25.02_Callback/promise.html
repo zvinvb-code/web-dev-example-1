@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Promise -> resolve or reject
+
+        let myPromise = new Promise(function (resolve, reject) {
+
+            if (/*condition*/ true) {
+                resolve("successfully")
+            }
+
+            else {
+                reject("Failure")
+            }
+        })
+
+        myPromise
+
+            .then(result => {
+                console.log(result)
+            })
+
+            .catch(error => { //passign parameter error
+                console.log(error)
+            })
+
+    </script>
+</body>
+
+</html>

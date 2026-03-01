@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //fetch - to get something
+        // Api - is having data
+
+        // connect fetch and api
+        // telling fetch keyword to get data from api
+
+        //syntax of fetch method-
+
+        //fetch("Api Address") - Fetch data from that API address
+
+
+        //.then () -> successful output if eveything is working
+        //.catch () -> unsuccessful output -> output is not working 
+
+        // json - js object notation format is key value pair and is human readable
+        // convert response into json format and then use the data
+
+        fetch("https://randomuser.me/api")
+
+            // convert to json format
+            // json() - convert api response in human readable form
+
+            .then(response => response.json())
+
+            .then(data => console.log(data))
+
+            .catch(error => console.log("error connection to API", error))
+        //     parameter (which stores value) => output
+
+        //key- result
+        //value - array
+
+
+        // how to make this api work in real project
+
+
+
+
+
+    </script>
+</body>
+
+</html>

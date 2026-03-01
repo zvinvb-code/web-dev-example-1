@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: azure;
+        }
+
+        .parent {
+            display: grid;
+            /* no idea about the number of columns? - Auto Fit (as per screen size) */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* column size minimum - 250px*/
+            gap: 30px
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 6px black;
+            padding-bottom: 12px;
+
+        }
+
+        .product img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .product button {
+            background-color: skyblue;
+            color: black;
+            border: none;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhlYWRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D">
+            <h2>Headphone</h2>
+            <p>$20</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1579269896398-4deb6cbdc320?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGhvb2RpZXxlbnwwfHwwfHx8MA%3D%3D">
+            <h2>Hoodie</h2>
+            <p>$55</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <h2>Shoes</h2>
+            <p>$100</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1622780432053-767528938f34?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a3VydGF8ZW58MHx8MHx8fDA%3D">
+            <h2>Kurta</h2>
+            <p>$50</p>
+            <button>Add to Cart</button>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

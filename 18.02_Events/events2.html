@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Types of Event</h1>
+
+    <button id="mybtn">Click Me</button>
+
+    <input id="myInput" placeholder="Search...">
+
+    <div id="mydiv">
+        <div class="content">Scroll inside me</div>
+    </div>
+
+    <script>
+        const button = document.getElementById("mybtn")
+        const input = document.getElementById("myInput")
+        const div = document.getElementById("mydiv")
+
+        // 1. click
+        button.addEventListener('click', function () {
+            alert('Logged in')
+        })
+
+        //input - keyboard action
+
+        //mouse actions- mouseover , mouseout
+        //mouse event
+        div.addEventListener('mouseover', function () {
+            div.style.backgroundColor = "orange";
+        })
+
+        div.addEventListener('mouseout', function () {
+            div.style.backgroundColor = "green";
+
+        })
+
+        //scroll
+        div.addEventListener('scroll', function () {
+            console.log("Scrolled")
+        })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="myH">Hello Learners</h1>
+
+    <h1 class="myclass">Amazon</h1>
+
+    <button onclick="ChangeContent()">Click me to Change</button>
+    <!-- //DOUBT -- ON SINGLE CLICK I WANT TO CHANGE BOTH THE FCNTIONS CONTENT -->
+
+    <script>
+
+        function ChangeContent() {
+
+            //calling the HTML tag - h1 by their ID Name
+
+            //           webpage      tag by ID --- Hello Learners
+
+            const abc = document.getElementById("myH") //Selected h1 tag with ID myH in JS
+            console.log(abc)
+            //abc contains h1 tag (html tag) - <h1 id="myH">Hello Learners</h1>
+
+            //Inner HTML - update content of HTML Tag
+
+            abc.innerHTML = "Welcome to UNLOX - JS"
+        }
+
+        function ChangeAmazon() {
+
+            const pqr = document.getElementsByClassName("myclass")
+            console.log(pqr)
+
+            pqr.innerHTML = "Flipkart"
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            background-color: antiquewhite;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product {
+
+            border: 1px solid brown;
+            /* size typeofborder color */
+            border-radius: 10px;
+            width: 300px;
+
+            overflow: hidden;
+            /*data outside div container is hidden */
+            text-align: center;
+            padding: 25px;
+            margin: 15px;
+            background-color: tomato;
+            box-shadow: 0 4px 12px black;
+            /*          x axis, yaxis spread-value color  */
+
+        }
+
+        .product img {
+            height: 300 px;
+            width: 100%;
+            /* width: 100% - fits fully in the div */
+            object-fit: cover;
+            /* it will make sure image is fitted perfectly */
+            border-radius: 10px;
+        }
+
+        .product h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        .product p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: brown;
+            font-weight: 100px;
+        }
+
+        .product button {
+            background-color: goldenrod;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            padding: 15px;
+
+        }
+
+        /* changing style with mouse - HOVER */
+        .product:hover {
+            background-color: fuchsia;
+            /* changing style appearance, scale means size, 1 is by default original size
+                (1,2) twice the original size
+            */
+            transform: scale (1.02);
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Content - any content - img or text
+     padding - space inside border - 4 direction
+     margin - space outside border - 4 direction
+     border - line surrounding from all 4 direction 
+     -->
+
+    <div class="product">
+        <img
+            src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <h2>Iphone</h2>
+        <p>$200</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img
+            src="https://images.unsplash.com/photo-1529636273736-fc88b31ea9d9?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <h2>Dress</h2>
+        <p>$100</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img
+            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ym9va3xlbnwwfHwwfHx8MA%3D%3D">
+        <h2>Books</h2>
+        <p>$20</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img
+            src="https://images.unsplash.com/photo-1617111490936-07b47eafdcd4?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zmxvd2VyJTIwcG90fGVufDB8fDB8fHww">
+        <h2>Flower Pot</h2>
+        <p>$150</p>
+        <button>Add to Cart</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="myH">Hello Learners</h1>
+
+    <div id="myDiv">
+        <p>Hello I am Paragraph </p>
+
+    </div>
+    <h1>Amazon</h1>
+
+    <script>
+
+        // manipulate text, update the content between the tags : textContent
+        const abc = document.getElementById("myH")
+        abc.textContent = "Welcome to Web Development"
+
+        // manipulate, change tag, p->h1
+        const ele = document.getElementById("myDiv")
+        ele.innerHTML = "<h1>Hello I'm Heading</h1>"
+
+        // manipulate/change style
+        // abc.style.property name (needed to change)
+        abc.style.color = "red";
+
+    </script>
+
+</body>
+
+</html>

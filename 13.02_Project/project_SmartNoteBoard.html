@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            /* side by side (row) */
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 70%;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px;
+            border: none;
+            background: rgb(110, 110, 241);
+            color: white;
+            cursor: pointer;
+            /* defining those 2 are buttons (clickable) */
+            border-radius: 50%;
+        }
+
+        button:hover {
+            background: rgb(66, 66, 234);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+
+            background: #e9ecef;
+            padding: 8px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        /* Dark Mode */
+        .dark {
+            background: #121212;
+            /*background color is dark*/
+            color: white;
+            /*text color is light*/
+        }
+
+        .dark .container {
+
+            background: #1e1e1e;
+        }
+
+        .dark li {
+            background: #333;
+
+        }
+    </style>
+</head>
+
+<body id="body"> <!--class="dark" class="not dark/light mode on->value is empty"-->
+    <!-- 
+    Notes List
+     Dark and Light mode theme 
+     Add notes
+     Delete notes
+     Total count of the notes
+
+    -->
+
+    <div class="container">
+        <h2>Smart Notes</h2>
+
+        <input type="text" id="noteInput" placeholder="write a note">
+
+        <!-- user will be able to add data if they click on the ADD button -->
+        <!-- function addNotes get called  -->
+        <button onclick="addNote()">Add</button>
+
+        <p id="message"></p>
+
+        <ul id="notelist">
+            <!-- <li>Gym</li>
+            <li>College</li> -->
+        </ul>
+
+        <p>Total Notes: <span id="total">0</span></p>
+        <!-- 
+        why SPAN?
+        increase the count of 0 only not the text i.e total count
+         -->
+
+        <button onclick="toggleMode()">🌙</button>
+
+    </div>
+
+    <script>
+
+        /* taking data from user */
+        /* click on add button -> same data is added in the notes (ul)*/
+
+        /* store value that the user is writing in the input box */
+        /* select the input box */
+
+        let notes = [] //user can write multiple notes, which can be added inside the array
+        // array- to store data of notes, empty because there is no data from user
+
+        //Feature -  Add Notes
+        function addNote() {
+            //Logic: get DATA from user (input) and ADD in UL tag (LIST)
+
+            let input = document.getElementById("noteInput");
+            let message = document.getElementById("message")
+
+
+            // store data user has written in the input tag - we use .value
+            // cannot use prompt
+
+            let value = input.value;//what user is writing in the input box -> .value
+
+            // user clicks on add button w/o adding a note
+            // = assigning value
+            // == compare value
+            // === compare values and datatype
+            if (value === "") {// no value in input tag (empty string)
+                //user has not written anything in the input tag so,
+                message.innerHTML = "Please Write Something! ";//update / change the content of paragraph tag (paragraph tag is initially empty)
+                return;
+            }
+            //get data -> add data inside the array-> use push method ->adds value that we got from the user
+            //push -> method to add data in the array
+            notes.push(value);
+            console.log(notes);//check logic wether data is added in the array or not
+
+            // resetting the value
+            input.value = ""; // once data is added the input tag should once again be empty so that we can add more data in it.
+            message.innerHTML = "";
+
+            // user will be able to add data if they click on the ADD button
+            // where function addNotes get called 
+
+            //calling function display insde my addNote
+            displayNotes();
+        }
+
+        //Function Display - How to display value of user in ul tag
+        // hint - use CreateElement method of Dom 
+
+        //create HTML tag by using DOM concept - CreateElement
+
+        // to print input of user inside the UL tag
+
+        function displayNotes() {
+
+            //display output in the ul tag
+            let list = document.getElementById("notelist"); // selected the ul tag
+
+            // total count tag -> span tag
+            //variable that will store the value of span tag
+            //update the total count
+            let total = document.getElementById("total"); //selected the span tag
+
+            list.innerHTML = "";// initially ul tag is empty
+
+
+            // input is getting stored inside the array ["A","B","C"]
+            //for loop -> to access the data of array / to get inside the array
+
+            for (let i = 0; i < notes.length; i++) {
+
+                //enter inside list
+                //pick one data and put inside the li tag
+
+                // then print that li tag data on the webpage
+                //but we don't have li tag in the ul
+
+                //create a tag - we can create the li tag in JS
+                //tag = element - createElement("TagName")
+
+                let li = document.createElement("li")
+                li.innerHTML = notes[i]
+
+                //add child(li) element in the ul -> ul tag is in list variable
+                list.appendChild(li)
+
+            }
+
+            //Total Count
+
+            //total number of data present in list or array = list length = total count
+            total.innerHTML = notes.length //(update value)
+
+        }
+
+        // Theme Change task
+        function toggleMode() {
+
+            //add and rem
+
+            let body = document.getElementById("body"); //selected body tag
+
+            // add class using JS
+
+            //get value of class attribute for any tag -> use classList -> gives the value of class attribute
+
+            if (body.classList.contains("dark")) {// checking if we have class dark in body? -NO 
+
+                body.classList.remove("dark") //if you have classname as dark then you remove it
+                //class="" - LIGHT
+            }
+            else {
+
+                body.classList.add("dark")//if you don't have classname as dark then you add it i.e the class is empty (in the body tag we add class="dark")
+                //class="dark" - DARK
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

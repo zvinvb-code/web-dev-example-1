@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smart Task Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 70%;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px;
+            border: none;
+            background: rgb(110, 110, 241);
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: rgb(66, 66, 234);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e9ecef;
+            padding: 8px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .dark {
+            background: #121212;
+            color: white;
+        }
+
+        .dark .container {
+            background: #1e1e1e;
+        }
+
+        .dark li {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <div class="container">
+        <h2>Smart Task Manager</h2>
+
+        <input type="text" id="taskInput" placeholder="Write a task">
+        <button onclick="addTask()">Add</button>
+
+        <p id="message"></p>
+
+        <ul id="tasklist"></ul>
+
+        <p>Total Tasks: <span id="total">0</span></p>
+
+        <button onclick="toggleMode()">🌙</button>
+    </div>
+
+    <script>
+        let tasks = [];
+
+        function addTask() {
+
+            let input = document.getElementById("taskInput");
+            let message = document.getElementById("message");
+            let value = input.value;
+
+            if (value === "") {
+                message.innerHTML = "Please write something!";
+                return;
+            }
+
+            tasks.push(value);
+            input.value = "";
+            message.innerHTML = "";
+
+            displayTasks();
+        }
+
+        function displayTasks() {
+
+            let list = document.getElementById("tasklist");
+            let total = document.getElementById("total");
+
+            list.innerHTML = "";
+
+            if (tasks.length === 0) {
+                list.innerHTML = "<p>No tasks available</p>";
+            }
+
+            for (let i = 0; i < tasks.length; i++) {
+
+                let li = document.createElement("li");
+
+                let span = document.createElement("span");
+                span.innerHTML = tasks[i];
+
+                // Mark complete
+                span.onclick = function () {
+                    span.classList.toggle("completed");
+                };
+
+                // Delete button
+                let delBtn = document.createElement("button");
+                delBtn.innerHTML = "X";
+                delBtn.onclick = function () {
+                    tasks.splice(i, 1);
+                    displayTasks();
+                };
+
+                li.appendChild(span);
+                li.appendChild(delBtn);
+                list.appendChild(li);
+            }
+
+            total.innerHTML = tasks.length;
+        }
+
+        function toggleMode() {
+            let body = document.getElementById("body");
+            body.classList.toggle("dark");
+        }
+
+    </script>
+
+</body>
+
+</html>
